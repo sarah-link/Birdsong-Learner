@@ -1,0 +1,103 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class CallIdentifier extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            bird: null
+        };
+    }
+
+    getBirdsByCountry = (country) => {
+        /*a few parameters to narrow things down:
+        type: song
+        quality: greater than C (non-inclusive)
+        length: 2-5 seconds
+         */
+
+        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:2-5"
+        fetch(url)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.getSingleCall(country, result.numPages)
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+
+    getSingleCall = (country, numPages) => {
+        //get one of the pages at random
+        const randomPage = Math.floor(Math.random() * this.state.numPages) + 1;
+        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:2-5&page=2"
+
+        fetch("api/2/recordings?query=cnt:United_States")
+            .then(res => res.json())
+            .then(
+                (result) => {
+
+                    //some birds are unknown, so keep trying until we get a known one
+                    let birdHasId = false;
+                    let bird = null;
+                    while (birdHasId === false) {
+                        const randomBirdId = Math.floor(Math.random() * result.recordings.length) + 1;
+                        bird = result.recordings[randomBirdId]
+                        if (bird.gen.toLowerCase() !== "mystery") {
+                            birdHasId = true
+                        }
+                    }
+
+                    //TODO: get 3 other random birds (from the same genus perhaps?) as multiple choice options
+
+                    //we now have our single bird! Save to state
+                    this.setState({
+                        isLoaded: true,
+                        bird: bird
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+
+    componentDidMount() {
+        // TODO: allow different countries
+        //TODO: allow filtering birds by genus
+        this.getBirdsByCountry("United_States")
+    }
+
+    render() {
+        const { error, isLoaded, numPages, bird } = this.state;
+        if (error) {
+            return <div>Error: {error.message}</div>;
+        }
+        if (!isLoaded) {
+            return <div>Loading...</div>;
+        } else {
+            return (
+                <ul>
+                    {bird.en}
+                    {/*{numPages.map(item => (*/}
+                    {/*    <li key={item.id}>*/}
+                    {/*        {item.name} {item.price}*/}
+                    {/*    </li>*/}
+                    {/*))}*/}
+                </ul>
+            );
+        }
+    }
+}
+
+export default CallIdentifier;
