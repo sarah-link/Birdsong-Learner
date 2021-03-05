@@ -37,10 +37,10 @@ class CallIdentifier extends React.Component {
 
     getSingleCall = (country, numPages) => {
         //get one of the pages at random
-        const randomPage = Math.floor(Math.random() * this.state.numPages) + 1;
-        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:2-5&page=2"
+        const randomPage = Math.floor(Math.random() * numPages) + 1;
+        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:2-5&page=" + randomPage
 
-        fetch("api/2/recordings?query=cnt:United_States")
+        fetch(url)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -55,6 +55,7 @@ class CallIdentifier extends React.Component {
                             birdHasId = true
                         }
                     }
+
 
                     //TODO: get 3 other random birds (from the same genus perhaps?) as multiple choice options
 
