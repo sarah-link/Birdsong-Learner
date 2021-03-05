@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PlaySongButton from "./PlaySongButton";
 
 class CallIdentifier extends React.Component {
     constructor(props) {
@@ -79,21 +80,20 @@ class CallIdentifier extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, numPages, bird } = this.state;
+        const { error, isLoaded, bird } = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         }
         if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
+            console.log(this.state.bird)
             return (
                 <ul>
                     {bird.en}
-                    {/*{numPages.map(item => (*/}
-                    {/*    <li key={item.id}>*/}
-                    {/*        {item.name} {item.price}*/}
-                    {/*    </li>*/}
-                    {/*))}*/}
+                    < br/>
+                    < PlaySongButton bird={this.state.bird}/>
+                    {/*<PlaySongButton/>*/}
                 </ul>
             );
         }
