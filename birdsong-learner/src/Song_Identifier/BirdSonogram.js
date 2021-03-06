@@ -9,6 +9,8 @@ class BirdSonogram extends React.Component {
         };
     }
 
+
+    //TODO: show line across sonogram as audio plays
     render() {
         let url = this.state.bird.sono.full.replace('//www.xeno-canto.org/','')
         return(

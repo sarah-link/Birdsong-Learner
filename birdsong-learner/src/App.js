@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect} from 'react';
 import './App.css';
-import SongIdentifier from "./Song Identifier/SongIdentifier";
+import SongIdentifier from "./Song_Identifier/SongIdentifier";
 
 import {
     BrowserRouter as Router,

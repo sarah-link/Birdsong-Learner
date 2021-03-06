@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import BirdAudio from "./BirdAudio";
 import UserGuess from "./UserGuess";
+import"./SongIdentifier.css";
 
 class SongIdentifier extends React.Component {
     constructor(props) {
@@ -96,13 +97,13 @@ class SongIdentifier extends React.Component {
             console.log(this.state.bird.en)
             return (
                     // {bird.en}
-                <>
+                <div id="identifier">
                     < br/>
                     < BirdAudio bird={this.state.bird}/>
                     < br/>
                     <UserGuess bird={this.state.bird}/>
                     {/*<BirdAudio/>*/}
-                </>
+                </div>
             );
         }
     }
