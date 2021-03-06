@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PlaySongButton from "./PlaySongButton";
+import BirdAudio from "./BirdAudio";
+import UserGuess from "./UserGuess";
 
 class CallIdentifier extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class CallIdentifier extends React.Component {
         length: 2-5 seconds
          */
 
-        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:2-5"
+        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12"
         fetch(url)
             .then(res => res.json())
             .then(
@@ -38,8 +39,9 @@ class CallIdentifier extends React.Component {
     getSingleCall = (country, numPages) => {
         //get one of the pages at random
         const randomPage = Math.floor(Math.random() * numPages) + 1;
-        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:2-5&page=" + randomPage
-
+        console.log("numPages: " + numPages)
+        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12&page=" + randomPage
+        console.log("picked page: " + randomPage)
         fetch(url)
             .then(res => res.json())
             .then(
@@ -54,6 +56,8 @@ class CallIdentifier extends React.Component {
                         if (bird.gen.toLowerCase() !== "mystery") {
                             birdHasId = true
                         }
+                        console.log("total birds: " + result.recordings.length)
+                        console.log("picked bird: " + randomBirdId)
                     }
 
 
@@ -93,8 +97,10 @@ class CallIdentifier extends React.Component {
                 <ul>
                     {bird.en}
                     < br/>
-                    < PlaySongButton bird={this.state.bird}/>
-                    {/*<PlaySongButton/>*/}
+                    < BirdAudio bird={this.state.bird}/>
+                    < br/>
+                    <UserGuess bird={this.state.bird}/>
+                    {/*<BirdAudio/>*/}
                 </ul>
             );
         }
