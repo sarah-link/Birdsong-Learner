@@ -33,7 +33,9 @@ class UserGuess extends React.Component {
     }
 
     cleanString(str) {
-        return String(str).toLowerCase().trim()
+        return String(str)
+            .toLowerCase()
+            .trim()
             .replaceAll("'","")
             .replaceAll("-","")
             .replaceAll(" ","")

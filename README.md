@@ -13,3 +13,7 @@ Birdsong Learner uses React
 Install react-router-dom
 
 `npm install react-router-dom`
+
+Install react-bootstrap
+
+`npm install react-bootstrap bootstrap`

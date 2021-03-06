@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import BirdSonogram from "./BirdSonogram";
 
 class BirdAudio extends React.Component {
     constructor(props) {
@@ -10,9 +11,10 @@ class BirdAudio extends React.Component {
     }
 
     render() {
-        let url = this.state.bird.url.replace('//www.xeno-canto.org/','') + "/download"
+        let url = this.state.bird.file.replace('//www.xeno-canto.org/','')
         return(
             <>
+                <BirdSonogram bird={this.state.bird}/>
                 <audio controls="controls">
                     <source src={url} type="audio/mpeg" />
                 </audio>

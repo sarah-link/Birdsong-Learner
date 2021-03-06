@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import BirdAudio from "./BirdAudio";
 import UserGuess from "./UserGuess";
 
-class CallIdentifier extends React.Component {
+class SongIdentifier extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +17,7 @@ class CallIdentifier extends React.Component {
         /*a few parameters to narrow things down:
         type: song
         quality: greater than C (non-inclusive)
-        length: 2-5 seconds
+        length: 5-12 seconds
          */
 
         const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12"
@@ -93,18 +93,19 @@ class CallIdentifier extends React.Component {
             return <div>Loading...</div>;
         } else {
             console.log(this.state.bird)
+            console.log(this.state.bird.en)
             return (
-                <ul>
-                    {bird.en}
+                    // {bird.en}
+                <>
                     < br/>
                     < BirdAudio bird={this.state.bird}/>
                     < br/>
                     <UserGuess bird={this.state.bird}/>
                     {/*<BirdAudio/>*/}
-                </ul>
+                </>
             );
         }
     }
 }
 
-export default CallIdentifier;
+export default SongIdentifier;

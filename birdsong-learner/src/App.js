@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect} from 'react';
 import './App.css';
-import CallIdentifier from "./Call Identifier/CallIdentifier";
+import SongIdentifier from "./Song Identifier/SongIdentifier";
 
 import {
     BrowserRouter as Router,
@@ -23,7 +23,7 @@ class App extends React.Component {
                 <div className="App" onClick={this.handleClick}>
                     {/*<NavBar />*/}
 
-                    <CallIdentifier />
+                    <SongIdentifier />
 
                     {/*<Switch>    /!* overlays and popups *!/*/}
                     {/*    <Route path="/login">*/}
