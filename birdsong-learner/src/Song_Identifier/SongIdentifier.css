@@ -1,4 +1,8 @@
 #identifier {
-    margin: 3rem;
-    background-color: lightcyan;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    background-color: #fafafa;
 }

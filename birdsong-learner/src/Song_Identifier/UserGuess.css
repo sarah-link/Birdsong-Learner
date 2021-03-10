@@ -1,0 +1,59 @@
+#userGuess {
+    margin: 0em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+
+} label {
+    display: block;
+    font-size: 2em;
+    margin: .5em;
+
+  }
+ input {
+     /*background-color: red;*/
+    width: 100%;
+    display: block;
+    font-size: 1em;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .textInput {
+     font-size: 1.5em;
+     width: 100%;
+ }
+
+ .submitInput {
+     width: 30%;
+     border: none;
+     margin: 1em;
+     padding: .5em;
+     background-color: lightgreen;
+     font-weight: bold;
+     border-radius: 5px;
+ }
+
+#feedback {
+    font-size: 1.3em;
+    position: relative;
+}
+
+.incorrect {
+    color: #cc0000;
+}
+
+.correct {
+    color: #009933;
+}

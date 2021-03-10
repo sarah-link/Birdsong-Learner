@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import "./BirdSonogram.css";
 
 class BirdSonogram extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bird: this.props.bird,
+            bird: this.props.bird
         };
     }
 
@@ -15,7 +15,9 @@ class BirdSonogram extends React.Component {
         let url = this.state.bird.sono.full.replace('//www.xeno-canto.org/','')
         return(
             <>
-                <img src={url} />
+                <div id="sonogram" >
+                <img src={url} id="sonogramImg"/>
+                </div>
             </>
         )
     }

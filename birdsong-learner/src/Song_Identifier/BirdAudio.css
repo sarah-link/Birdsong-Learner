@@ -1,21 +1,69 @@
 #idenInfo {
-    background-color: red;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    margin: 0em 2em;
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 40em;
-    width: 100%
+#audioControls {
+    position: relative;
+    top: -3em;
 }
 
-audio {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#playPauseButton{
+    height: 100%;
+    width: 25%;
+    max-width: 125px;
+    font-size: 3em;
+    border-radius: 50%;
+    background-color: lightgreen;
+    border: none;
+    outline: none;
+    position: relative;
+    top: 0%;
+    left: .1em;
 }
 
-#audioControls{
-
+#playPauseButton:before {
+    background-color: blueviolet;
+    content: "";
+    float: left;
+    padding-top: 100%;
 }
+
+
+
+
+/*@media screen and (min-width: 451px) {*/
+    /*visually center play and pause icons*/
+#play {
+    position: absolute;
+    width: 80%;
+    top: 23%;
+    left: 15%;
+}
+    #pause {
+        position: absolute;
+        width: 80%;
+        top: 8%;
+        left: 10.5%;
+    }
+/*}*/
+
+/*!*resize svg's for small screens*!*/
+/*@media screen and (max-width: 450px) {*/
+/*    svg {*/
+/*        font-size: .7em;*/
+/*    }*/
+
+/*    #play {*/
+/*        top: 500%;*/
+/*        left: 29%;*/
+/*    }*/
+
+/*    #pause {*/
+/*        top: 23%;*/
+/*        left: 25%;*/
+/*    }*/
+/*}*/
+

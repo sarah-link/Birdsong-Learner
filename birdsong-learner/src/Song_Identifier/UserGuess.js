@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import "./UserGuess.css";
 
 class UserGuess extends React.Component {
     constructor(props) {
@@ -46,21 +46,22 @@ class UserGuess extends React.Component {
     render() {
         let feedback
         if (this.state.isGuessCorrect === false) {
-            feedback = <p>Your guess is incorrect</p>
+            feedback = <p id="feedback" class="incorrect">Your guess is incorrect, try again</p>
         } else if (this.state.isGuessCorrect === true){
-            feedback = <p>Correct!</p>
+            feedback = <p id="feedback" class="correct">Correct!</p>
         } else {
-            feedback = <></>
+            feedback = <p>&nbsp;</p>
         }
         return(
-            <>
-                <label htmlFor="guess">Guess Bird:</label> <br />
+            <div id="userGuess">
+                <label htmlFor="guess">Guess Bird:</label>
+                <div className="break"></div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.userGuess} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                    <input type="text"  className="textInput" value={this.state.userGuess} onChange={this.handleChange}/>
+                    <input type="submit" className = "submitInput" value="Submit" />
                 </form>
                 {feedback}
-            </>
+            </div>
         )
     }
 }

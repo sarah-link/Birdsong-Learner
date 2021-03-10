@@ -14,6 +14,6 @@ Install react-router-dom
 
 `npm install react-router-dom`
 
-Install react-bootstrap
+Install react-icons
 
-`npm install react-bootstrap bootstrap`
+`npm install react-icons --save`

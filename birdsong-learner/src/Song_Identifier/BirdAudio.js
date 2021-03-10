@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import BirdSonogram from "./BirdSonogram";
-import"./BirdAudio.css";
+import "./BirdAudio.css";
+import play from "../images/play.png"
+import pause from "../images/pause.png"
+
 
 class BirdAudio extends React.Component {
     constructor(props) {
@@ -51,7 +53,11 @@ class BirdAudio extends React.Component {
                     Your browser does not support the audio element.
                 </audio>
                 <div id="audioControls">
-                    <button id="playPause" onClick={() => this.playPauseAudio()}>{this.state.isPlaying ? "Pause" : "Play"}</button>
+                    <button id="playPauseButton"
+                            onClick={() => this.playPauseAudio()}>{
+                        this.state.isPlaying ? (<img id="pause" src={pause} />) : (<img id="play" src={play} />)
+                            }
+                    </button>
                 </div>
             </div>
         )
