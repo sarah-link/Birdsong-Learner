@@ -53,8 +53,7 @@ class BirdAudio extends React.Component {
                     Your browser does not support the audio element.
                 </audio>
                 <div id="audioControls">
-                    <button id="playPauseButton"
-                            onClick={() => this.playPauseAudio()}>{
+                    <button id="playPauseButton" onClick={() => this.playPauseAudio()}>{
                         this.state.isPlaying ? (<img id="pause" src={pause} />) : (<img id="play" src={play} />)
                             }
                     </button>

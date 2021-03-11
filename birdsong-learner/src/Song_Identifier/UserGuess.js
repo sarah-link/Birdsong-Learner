@@ -41,6 +41,12 @@ class UserGuess extends React.Component {
             .replaceAll(" ","")
     }
 
+    showCheat() {
+        this.setState({
+            userGuess: this.state.bird.en
+        })
+    }
+
 
 
     render() {
@@ -53,15 +59,18 @@ class UserGuess extends React.Component {
             feedback = <p>&nbsp;</p>
         }
         return(
-            <div id="userGuess">
-                <label htmlFor="guess">Guess Bird:</label>
-                <div className="break"></div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text"  className="textInput" value={this.state.userGuess} onChange={this.handleChange}/>
-                    <input type="submit" className = "submitInput" value="Submit" />
-                </form>
-                {feedback}
-            </div>
+            <>
+                <div id="userGuess">
+                    <button id="cheatButton" onClick={() => this.showCheat()}>Cheat</button>
+                    <label htmlFor="guess">Guess Bird:</label>
+                    <div className="break"></div>
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text"  className="textInput" id="userGuess" value={this.state.userGuess} onChange={this.handleChange}/>
+                        <input type="submit" className = "submitInput" value="Submit" />
+                    </form>
+                    {feedback}
+                </div>
+             </>
         )
     }
 }

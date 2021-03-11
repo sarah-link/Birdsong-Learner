@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     height: auto;
+    position: relative;
 
 } label {
     display: block;
@@ -21,6 +22,21 @@
     display: block;
     font-size: 1em;
 }
+
+ #cheatButton {
+     position: absolute;
+     border: none;
+     background-color: #dedede;
+     font-weight: bold;
+     border-radius: 5px;
+     height: 2.5em;
+     top: 0;
+     right: 0;
+ }
+
+ .guessDiv {
+     border: 2px solid red;
+ }
 
 form {
     margin-left: auto;

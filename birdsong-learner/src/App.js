@@ -13,14 +13,10 @@ class App extends React.Component {
         super(props);
     }
 
-    handleClick() {
-
-    }
-
     render() {
         return (
             <Router>
-                <div className="App" onClick={this.handleClick}>
+                <div className="App">
                     {/*<NavBar />*/}
 
                     <SongIdentifier />
