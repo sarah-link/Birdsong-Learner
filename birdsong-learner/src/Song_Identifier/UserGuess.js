@@ -42,13 +42,16 @@ class UserGuess extends React.Component {
             userGuess: this.state.bird.en
         })
     }
-    
+
     render() {
         let feedback
         if (this.state.isGuessCorrect === false) {
-            feedback = <p id="feedback" class="incorrect">Your guess is incorrect, try again</p>
+            feedback = <p id="feedback" className="incorrect">Your guess is incorrect, try again</p>
         } else if (this.state.isGuessCorrect === true){
-            feedback = <p id="feedback" class="correct">Correct!</p>
+            feedback = <>
+                        <p id="feedback" className="correct">Correct!</p>
+                        <button onClick={this.props.loadNextBird} id="nextBirdButton">Try Again?</button>
+                        </>
         } else {
             feedback = <p>&nbsp;</p>
         }

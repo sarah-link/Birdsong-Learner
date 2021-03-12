@@ -35,6 +35,16 @@
      right: 0;
  }
 
+ #nextBirdButton {
+     border: none;
+     background-color: #009933;
+     color: white;
+     font-weight: bold;
+     font-size: 1.2em;
+     border-radius: 5px;
+     padding: .5em 1em;
+ }
+
  .guessDiv {
      border: 2px solid red;
  }
@@ -64,10 +74,11 @@ form {
  }
 
 #feedback {
-    font-size: 1.3em;
+    font-size: 1.5em;
     position: relative;
     font-family: "Lato", sans-serif;
     font-weight: bold;
+    margin: .4em;
 }
 
 .incorrect {

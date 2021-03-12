@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import BirdAudio from "./BirdAudio";
 import UserGuess from "./UserGuess";
 import"./SongIdentifier.css";
@@ -12,6 +11,7 @@ class SongIdentifier extends React.Component {
             isLoaded: false,
             bird: null
         };
+        this.loadNextBird = this.loadNextBird.bind(this)
     }
 
     getBirdsByCountry = (country) => {
@@ -85,8 +85,20 @@ class SongIdentifier extends React.Component {
         this.getBirdsByCountry("United_States")
     }
 
+    // componentDidUpdate(prevProps) {
+    //     // Typical usage (don't forget to compare props):
+    //     if (this.props.isLoaded !== prevProps.isLoaded) {
+    //         console.log("reload?")
+    //     }
+    // }
+
+    loadNextBird() {
+        this.setState({isLoaded: false})
+        this.componentDidMount()
+    }
+
     render() {
-        const { error, isLoaded, bird } = this.state;
+        const { error, isLoaded} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         }
@@ -96,13 +108,11 @@ class SongIdentifier extends React.Component {
             console.log(this.state.bird)
             console.log(this.state.bird.en)
             return (
-                    // {bird.en}
                 <div id="identifier">
                     < br/>
                     < BirdAudio bird={this.state.bird}/>
                     < br/>
-                    <UserGuess bird={this.state.bird}/>
-                    {/*<BirdAudio/>*/}
+                    <UserGuess bird={this.state.bird} loadNextBird={() => {this.loadNextBird()}}/>
                 </div>
             );
         }
