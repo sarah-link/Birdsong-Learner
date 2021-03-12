@@ -1,6 +1,7 @@
 #sonogram {
     background-color: white;
     display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 25% 0%;
     /*position: relative;*/
@@ -13,4 +14,9 @@
     margin-right: auto;
     max-width: 50em;
     width: 100%;
+}
+
+.credits {
+    font-size: 0.8em;
+    font-family: "Lato", sans-serif;
 }

@@ -24,11 +24,7 @@ class UserGuess extends React.Component {
         //clean up user input and common name just a bit
         let guess = this.cleanString(this.state.userGuess)
         let cleanedBird = this.cleanString(this.state.bird.en)
-        console.log(guess)
-        console.log(cleanedBird)
-        this.setState({isGuessCorrect: (guess === cleanedBird)}, () => {
-          console.log(this.state.isGuessCorrect)
-        })
+        this.setState({isGuessCorrect: (guess === cleanedBird)})
 
     }
 
@@ -46,9 +42,7 @@ class UserGuess extends React.Component {
             userGuess: this.state.bird.en
         })
     }
-
-
-
+    
     render() {
         let feedback
         if (this.state.isGuessCorrect === false) {

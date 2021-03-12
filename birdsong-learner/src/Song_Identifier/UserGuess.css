@@ -14,7 +14,8 @@
     display: block;
     font-size: 2em;
     margin: .5em;
-
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
   }
  input {
      /*background-color: red;*/
@@ -49,6 +50,7 @@ form {
  .textInput {
      font-size: 1.5em;
      width: 100%;
+     font-family: "Lato", sans-serif;
  }
 
  .submitInput {
@@ -64,6 +66,8 @@ form {
 #feedback {
     font-size: 1.3em;
     position: relative;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
 }
 
 .incorrect {

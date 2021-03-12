@@ -16,7 +16,8 @@ class BirdSonogram extends React.Component {
         return(
             <>
                 <div id="sonogram" >
-                <img src={url} id="sonogramImg"/>
+                <img src={url} id="sonogramImg" />
+                <p className="credits">Recorded by: {this.state.bird.rec}</p>
                 </div>
             </>
         )
