@@ -102,13 +102,16 @@ class SongIdentifier extends React.Component {
         if (error) {
             return <div>Error: {error.message}</div>;
         }
+        // else {
+        //     return <div className="identifier loading">Loading...</div>;
+        // }
         if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <div className="identifier loading">Loading...</div>;
         } else {
             console.log(this.state.bird)
             console.log(this.state.bird.en)
             return (
-                <div id="identifier">
+                <div className="identifier">
                     < br/>
                     < BirdAudio bird={this.state.bird}/>
                     < br/>
