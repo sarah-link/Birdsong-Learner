@@ -1,7 +1,7 @@
 import React from 'react';
 import BirdAudio from "./BirdAudio";
 import UserGuess from "./UserGuess";
-import"./SongIdentifier.css";
+import"./stylesheets/SongIdentifier.css";
 
 class SongIdentifier extends React.Component {
     constructor(props) {

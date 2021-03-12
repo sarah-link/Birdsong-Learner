@@ -31,39 +31,16 @@
     padding-top: 100%;
 }
 
-
-
-
-/*@media screen and (min-width: 451px) {*/
-    /*visually center play and pause icons*/
-#play {
+svg {
+    width: 100%;
+    height: auto;
+} .pause {
     position: absolute;
-    width: 80%;
-    top: 23%;
-    left: 15%;
-}
-    #pause {
-        position: absolute;
-        width: 80%;
-        top: 8%;
-        left: 10.5%;
-    }
-/*}*/
-
-/*!*resize svg's for small screens*!*/
-/*@media screen and (max-width: 450px) {*/
-/*    svg {*/
-/*        font-size: .7em;*/
-/*    }*/
-
-/*    #play {*/
-/*        top: 500%;*/
-/*        left: 29%;*/
-/*    }*/
-
-/*    #pause {*/
-/*        top: 23%;*/
-/*        left: 25%;*/
-/*    }*/
-/*}*/
-
+    left: -1%;
+    top: -3%;
+  }
+  .play {
+      position: absolute;
+      left: 4%;
+      top: -2%;
+  }

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./BirdSonogram.css";
+import "./stylesheets/BirdSonogram.css";
 
 class BirdSonogram extends React.Component {
     constructor(props) {

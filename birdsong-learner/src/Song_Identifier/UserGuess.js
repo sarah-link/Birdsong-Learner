@@ -1,5 +1,5 @@
 import React from 'react';
-import "./UserGuess.css";
+import "./stylesheets/UserGuess.css";
 
 class UserGuess extends React.Component {
     constructor(props) {

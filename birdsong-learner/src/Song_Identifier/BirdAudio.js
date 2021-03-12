@@ -1,8 +1,6 @@
 import React from 'react';
 import BirdSonogram from "./BirdSonogram";
-import "./BirdAudio.css";
-import play from "../images/play.png"
-import pause from "../images/pause.png"
+import "./stylesheets/BirdAudio.css";
 
 
 class BirdAudio extends React.Component {
@@ -44,6 +42,7 @@ class BirdAudio extends React.Component {
     }
 
     render() {
+
         let url = this.state.bird.file.replace('//www.xeno-canto.org/','')
         return(
             <div id={"idenInfo"}>
@@ -54,7 +53,21 @@ class BirdAudio extends React.Component {
                 </audio>
                 <div id="audioControls">
                     <button id="playPauseButton" onClick={() => this.playPauseAudio()}>{
-                        this.state.isPlaying ? (<img id="pause" src={pause} />) : (<img id="play" src={play} />)
+                        this.state.isPlaying ?
+                            //can't declare these as a variable for some reason
+                            //TODO: clean this up?
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                 className="bi bi-pause-fill pause" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
+                            </svg>
+                            :
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                 className="bi bi-play-fill play" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                            </svg>
+
                             }
                     </button>
                 </div>
