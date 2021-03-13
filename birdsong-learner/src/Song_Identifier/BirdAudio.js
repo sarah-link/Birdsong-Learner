@@ -43,7 +43,7 @@ class BirdAudio extends React.Component {
 
     render() {
 
-        let url = this.state.bird.file.replace('//www.xeno-canto.org/','')
+        let url = "https:" + this.state.bird.file
         return(
             <div id={"idenInfo"}>
                 <BirdSonogram bird={this.state.bird}/>

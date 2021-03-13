@@ -21,7 +21,7 @@ class SongIdentifier extends React.Component {
         length: 5-12 seconds
          */
 
-        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12"
+        const url = "https://cors.bridged.cc/https://www.xeno-canto.org/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12"
         fetch(url)
             .then(res => res.json())
             .then(
@@ -41,7 +41,7 @@ class SongIdentifier extends React.Component {
         //get one of the pages at random
         const randomPage = Math.floor(Math.random() * numPages) + 1;
         console.log("numPages: " + numPages)
-        const url = "/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12&page=" + randomPage
+        const url = "https://cors.bridged.cc/https://www.xeno-canto.org/api/2/recordings?query=cnt:" + country + "+type:song+q_gt:C+len:5-12&page=" + randomPage
         console.log("picked page: " + randomPage)
         fetch(url)
             .then(res => res.json())
