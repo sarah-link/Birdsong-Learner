@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Birdsong-Learner/static/css/main.6466626f.chunk.css",
+    "main.js": "/Birdsong-Learner/static/js/main.96262115.chunk.js",
+    "main.js.map": "/Birdsong-Learner/static/js/main.96262115.chunk.js.map",
+    "runtime-main.js": "/Birdsong-Learner/static/js/runtime-main.4ebf9703.js",
+    "runtime-main.js.map": "/Birdsong-Learner/static/js/runtime-main.4ebf9703.js.map",
+    "static/js/2.02508197.chunk.js": "/Birdsong-Learner/static/js/2.02508197.chunk.js",
+    "static/js/2.02508197.chunk.js.map": "/Birdsong-Learner/static/js/2.02508197.chunk.js.map",
+    "index.html": "/Birdsong-Learner/index.html",
+    "static/css/main.6466626f.chunk.css.map": "/Birdsong-Learner/static/css/main.6466626f.chunk.css.map",
+    "static/js/2.02508197.chunk.js.LICENSE.txt": "/Birdsong-Learner/static/js/2.02508197.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ebf9703.js",
+    "static/js/2.02508197.chunk.js",
+    "static/css/main.6466626f.chunk.css",
+    "static/js/main.96262115.chunk.js"
+  ]
+}
